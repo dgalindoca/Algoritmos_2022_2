@@ -7,6 +7,22 @@ se cambia la función de optimización y algunos parámetros, los cuales permite
 describir su comportamiento. Cabe destacar que en todas estas pruebas las poblaciones
 convergen a un máximo local o global en el rango de búsqueda.
 
+Como se puede observar en los tests 8 a 11, al correrse el algoritmo en funciones con 
+varios máximos locales de valores similares, al ser las probabilidades de reproducción 
+de los máximos locales similar a aquella del máximo absoluto en el intervalo evaluado, 
+el éxito del algoritmo fue menor, especialmente para la representación decimal de los 
+genomas. En el test 9 se han variado la cantidad de individuos por generación, y la 
+posibilidad de mutación, y en general se observa que el error promedio se mantiene 
+relativamente constante a partir de la generación 100 en los casos en que la 
+probabilidad de mutación no se aumentó. Más, sin embargo, aun en los casos en que se 
+converge a una respuesta, esta raramente es el máximo del intervalo evaluado, aun 
+cuando se tiene una gran población. Los mejores resultados para estos experimentos 
+con funciones de varios máximos locales de valores similares se obtuvieron en el test 11, 
+mediante la representación binaria de los genomas. Cierto es que para mejorar la 
+precisión de las respuestas con esta representación, los genomas tuvieron que multiplicar 
+su longitud, pero gracias a ello se obtuvo una ganancia en estabilidad y un mejor 
+desempeño por parte del algoritmo, sumado al hecho de que se alcanzaron resultados 
+satisfactorios manteniendo un número conservador de individuos por generación.
 
 Conclusiones
 
@@ -54,3 +70,6 @@ Por otro lado, es clara también la importancia de la probabilidad de mutación,
 encarga de asegurar que ningún punto del espacio de búsqueda tenga probabilidad cero 
 de ser examinado, lo que tiene una gran importancia para asegurar la convergencia del 
 Algoritmo.
+
+El parámetro que más directamente ha influido en la velocidad de convergencia de la 
+respuesta en nuestro algoritmo ha sido la probabilidad de mutar un genoma.
