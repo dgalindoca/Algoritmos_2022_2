@@ -36,6 +36,13 @@ O(Tamaño_población)+O(generaciones) = O(Tamaño_población+generaciones)
 
 Que simplificado sería O(n+m).
 
+Cabe aclarar que el algoritmo llega al la mayor cantidad de información almacenada en 
+memoria en un mismo instante de tiempo al terminar de evaluar la última generación, 
+cuando están almacenados tamaño_poblacion cantidad de arreglos con tamaño_genoma cantidad 
+de elementos, ademas de datos de errores promedio y mejores individuos para cada 
+generación, la complejidad espacial crece con: 
+tamaño_poblacion*tamaño_genoma + generaciones.
+
 Cuando nos enfocamos en acelerar la convergencia, destaca la influencia de 2 parámetros 
 específicos. el primero de ellos es la generación de la población inicial, ya que 
 aunque habitualmente esta se genera escogiendo números al azar, existen trabajos sobre 
