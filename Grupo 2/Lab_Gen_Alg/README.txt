@@ -26,13 +26,13 @@ satisfactorios manteniendo un número conservador de individuos por generación.
 
 Conclusiones
 
-Teniendo en cuenta que el método principal de la clase Function es _simulate_maximum_, 
+Teniendo en cuenta que el método principal de la clase Function es simulate_maximum, 
 el tiempo computacional ocupado por la clase Function para encontrar optimos locales 
 utilizando una adaptación del método genético visto en clase es de:
 
-O(population)+O(generations)*(O(population\_size)*O(decimal\_places)+O(population)*
-O(decimal\_places)) 
-= O(generation*population\_size*decimal\_places)
+O(population)+O(generations)*(O(population_size)*O(decimal_places)+O(population)*
+O(decimal_places)) 
+= O(generation*population_size*decimal_places)
 
 Esta complejidad en función de los parámetros especificados puede ser simplificada en 
 terminos de n, por lo que esta sería O(n^3).
@@ -46,17 +46,11 @@ en el parámetro "Tamaño_población".
 El número de elementos de "errors" y "top_individuals" es igual al número de elementos 
 en la genaración actual.
 
-Teniendo esto en cuenta, podemos afirmar que el costo en cuanto a espacio es:
-
-O(Tamaño_población)+O(generaciones) = O(Tamaño_población+generaciones)
-
-Que simplificado sería O(n+m).
-
-Cabe aclarar que el algoritmo llega al la mayor cantidad de información almacenada en 
+El algoritmo llega al la mayor cantidad de información almacenada en 
 memoria en un mismo instante de tiempo al terminar de evaluar la última generación, 
 cuando están almacenados tamaño_poblacion cantidad de arreglos con tamaño_genoma cantidad 
-de elementos, ademas de datos de errores promedio y mejores individuos para cada 
-generación, la complejidad espacial crece con: 
+de elementos, además de datos de errores promedio y mejores individuos para cada 
+generación, la complejidad espacial crece con respecto a: 
 tamaño_poblacion*tamaño_genoma + generaciones.
 
 Cuando nos enfocamos en acelerar la convergencia, destaca la influencia de 2 parámetros 
